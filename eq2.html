@@ -1,50 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Пример страницы</title>
     <style>
         body {
-            background-color: #98FB98;
+            background-color: palegreen;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
         }
-        .input-field {
-            margin: 10px;
+        .container {
+            text-align: center;
         }
-        .button-group {
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .buttons {
             margin-top: 20px;
+        }
+        button {
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-    <div id="input-group">
-        <div class="input-field">
+    <div class="container">
+        <div class="input-group">
             <label for="input1">1</label>
             <input type="text" id="input1">
         </div>
-        <div class="input-field">
+        <div class="input-group">
             <label for="input2">2</label>
             <input type="text" id="input2">
         </div>
-        <div class="input-field">
+        <div class="input-group">
             <label for="input3">3</label>
             <input type="text" id="input3">
         </div>
-        <div class="input-field">
+        <div class="input-group">
             <label for="input4">4</label>
             <input type="text" id="input4">
         </div>
-        <div class="input-field">
+        <div class="input-group">
             <label for="input5">5</label>
             <input type="text" id="input5">
         </div>
+        <div class="buttons">
+            <button onclick="sendData()">OK</button>
+            <button>ОТМЕНА</button>
+        </div>
     </div>
-    <div class="button-group">
-        <button id="ok-button">OK</button>
-        <button id="cancel-button">ОТМЕНА</button>
-    </div>
+
+    <script>
+        function sendData() {
+            const input1 = document.getElementById('input1').value;
+            const input2 = document.getElementById('input2').value;
+            const input3 = document.getElementById('input3').value;
+            const input4 = document.getElementById('input4').value;
+            const input5 = document.getElementById('input5').value;
+
+            const data = {
+                input1: input1,
+                input2: input2,
+                input3: input3,
+                input4: input4,
+                input5: input5
+            };
+
+            window.Telegram.WebApp.sendData(JSON.stringify(data));
+        }
+    </script>
 </body>
 </html>
