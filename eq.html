@@ -1,45 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings</title>
+    <title>Пример страницы</title>
     <style>
-        /* Add your custom CSS styles here */
-        .input-container {
+        body {
+            background-color: palegreen;
             display: flex;
+            justify-content: center;
             align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-        .number-input {
-            width: 100px;
+        .container {
             text-align: center;
         }
-        .btn {
-            padding: 5px 10px;
-            cursor: pointer;
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Настройки</h1>
-    <div class="input-container">
-        <label for="apiKey">Api Key:</label>
-        <input type="text" id="apiKey" class="number-input" placeholder="Enter your API Key">
+    <div class="container">
+        <div class="input-group">
+            <label for="input1">1</label>
+            <input type="text" id="input1">
+        </div>
+        <div class="input-group">
+            <label for="input2">2</label>
+            <input type="text" id="input2">
+        </div>
+        <div class="input-group">
+            <label for="input3">3</label>
+            <input type="text" id="input3">
+        </div>
+        <div class="input-group">
+            <label for="input4">4</label>
+            <input type="text" id="input4">
+        </div>
+        <div class="input-group">
+            <label for="input5">5</label>
+            <input type="text" id="input5">
+        </div>
+        <div class="buttons">
+            <button>OK</button>
+            <button>ОТМЕНА</button>
+        </div>
     </div>
-    <div class="input-container">
-        <label for="apiSecret">Api Secret:</label>
-        <input type="text" id="apiSecret" class="number-input" placeholder="Enter your API Secret">
-    </div>
-    <button onclick="saveData()">Save</button>
-
-    <script>
-        function saveData() {
-            const apiKey = document.getElementById('apiKey').value;
-            const apiSecret = document.getElementById('apiSecret').value;
-            // Implement your save logic here
-            console.log('API Key:', apiKey);
-            console.log('API Secret:', apiSecret);
-        }
-    </script>
 </body>
 </html>
